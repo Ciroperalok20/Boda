@@ -157,12 +157,48 @@
         .btn-olive { background: var(--olive); }
 
         /* --- CARRUSEL --- */
-        .gallery-track { display: flex; gap: 15px; animation: scrollGallery 10s linear infinite; }
-        .gallery-item { flex: 0 0 250px; height: 350px; overflow: hidden; border: 1px solid var(--border-sepia); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        @keyframes scrollGallery { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.gallery-track {
+    display: 
+        flex;
+    gap: 
+        15px;
+    width: 
+        max-content; /* Importante: permite que crezca según las fotos */
+    animation: 
+        scrollGallery 25s linear infinite; /* Aumenté el tiempo para que sea más elegante */
+}
 
-        @media (max-width: 600px) { .itinerary-content { font-size: 0.8rem; } }
+.gallery-item {
+    flex: 
+        0 0 250px;
+    height: 
+        350px;
+    overflow: 
+        hidden;
+    border: 
+        1px solid var(--border-sepia);
+}
+
+.gallery-item img {
+    width: 
+        100%;
+    height: 
+        100%;
+    object-fit: 
+        cover;
+}
+
+@keyframes scrollGallery {
+    from {
+        transform: 
+            translateX(0);
+    }
+    to {
+        /* Se desplaza exactamente la mitad del contenedor para el bucle */
+        transform: 
+            translateX(calc(-50% - 7.5px)); 
+    }
+}
         
         /* --- BOTÓN DE MÚSICA FLOTANTE --- */
 #music-control {
@@ -380,24 +416,25 @@
 
     <section class="section reveal">
         <h2 class="gold-text" style="font-size: 3rem;">Gracias por ser parte de nuestra Historia</h2>
-        <div style="overflow:hidden; padding: 40px 0;">
-            <div class="gallery-track">
-                <div class="gallery-item"><img src="img/Imagen4.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen5.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen6.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen7.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen4.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen5.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen6.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen7.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen8.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen9.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen10.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen11.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen12.jpg"></div>
-                <div class="gallery-item"><img src="img/Imagen13.jpg"></div>
-            </div>
-        </div>
+       <div class="gallery-wrapper" style="overflow: hidden;">
+    <div class="gallery-track">
+        <div class="gallery-item"><img src="img/Imagen4.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen5.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen6.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen7.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen8.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen9.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen10.jpg"></div>
+        
+        <div class="gallery-item"><img src="img/Imagen4.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen5.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen6.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen7.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen8.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen9.jpg"></div>
+        <div class="gallery-item"><img src="img/Imagen10.jpg"></div>
+    </div>
+</div>
     </section>
 
     <footer style="padding: 40px; font-size: 0.7rem; opacity: 0.5;">
